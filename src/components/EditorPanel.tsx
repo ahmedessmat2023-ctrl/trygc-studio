@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BrandTab } from "./editor/BrandTab";
 import { ChartsTab } from "./editor/ChartsTab";
@@ -9,7 +10,7 @@ import { QualityTab } from "./editor/QualityTab";
 import { SlidesTab } from "./editor/SlidesTab";
 import { ThemeTab, TypographyTab } from "./editor/ThemeTab";
 
-const TABS: { id: string; label: string; node: React.ReactNode }[] = [
+const TABS: { id: string; label: string; node: ReactNode }[] = [
   { id: "brand", label: "Brand", node: <BrandTab /> },
   { id: "theme", label: "Theme", node: <ThemeTab /> },
   { id: "type", label: "Type", node: <TypographyTab /> },

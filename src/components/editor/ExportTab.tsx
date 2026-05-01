@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import type { ChangeEvent } from "react";
 import { useDeckStore } from "@/deck/store";
 import { Button } from "@/components/ui/button";
 import { Download, FileJson, Printer, RotateCcw, Upload } from "lucide-react";
@@ -45,7 +46,7 @@ ${dataScript}
     toast.success("Standalone HTML exported");
   };
 
-  const importJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const importJSON = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();

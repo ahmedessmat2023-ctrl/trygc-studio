@@ -16,7 +16,7 @@ const useKpis = (slide: SlideContent, deck: DeckData) =>
 function SlideHeader({ deck, slideNumber, totalSlides }: { deck: DeckData; slideNumber: number; totalSlides: number }) {
   return (
     <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-16 pt-10 slide-mono"
-      style={{ fontSize: 13, color: "hsl(var(--slide-muted))", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+      style={{ zIndex: 30, fontSize: 13, color: "hsl(var(--slide-muted))", letterSpacing: "0.18em", textTransform: "uppercase" }}>
       <div className="flex items-center gap-3">
         <span style={{ color: "hsl(var(--slide-primary))", fontWeight: 700 }}>{deck.meta.brand}</span>
         <span style={{ opacity: 0.4 }}>×</span>
@@ -34,7 +34,7 @@ function SlideHeader({ deck, slideNumber, totalSlides }: { deck: DeckData; slide
 function SlideFooter({ deck }: { deck: DeckData }) {
   return (
     <div className="absolute bottom-8 left-16 right-16 flex items-center justify-between slide-mono"
-      style={{ fontSize: 12, color: "hsl(var(--slide-muted))", letterSpacing: "0.16em", textTransform: "uppercase" }}>
+      style={{ zIndex: 30, fontSize: 12, color: "hsl(var(--slide-muted))", letterSpacing: "0.16em", textTransform: "uppercase" }}>
       <span>{deck.meta.footer}</span>
       <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
         <span style={{ width: 24, height: 1, background: "hsl(var(--slide-border))" }} />

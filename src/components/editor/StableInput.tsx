@@ -1,4 +1,5 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
+import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
@@ -12,7 +13,7 @@ import { cn } from "@/lib/utils";
  *   (so external resets/imports still apply when the user isn't typing).
  * - Cursor position is preserved because we never replace the local state during typing.
  */
-interface StableInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange"> {
+interface StableInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange"> {
   value: string;
   onCommit: (value: string) => void;
   debounceMs?: number;
@@ -56,7 +57,7 @@ export const StableInput = forwardRef<HTMLInputElement, StableInputProps>(functi
   );
 });
 
-interface StableTextareaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "value" | "onChange"> {
+interface StableTextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "value" | "onChange"> {
   value: string;
   onCommit: (value: string) => void;
   debounceMs?: number;
